@@ -1,8 +1,8 @@
 import pandas as pd
-'''#Zadanie 1
+#Zadanie 1
 
 df = pd.read_csv('demografia.csv')
-print(df,"\n")
+print(df)
 
 #Zadanie 2
 
@@ -28,7 +28,7 @@ rok_max_przyrost = dane_bezkraju.max().idxmax()
 index_max_przyrost = dane_bezkraju[rok_max_przyrost].idxmax()
 kraj = dane.loc[index_max_przyrost, "KRAJE"]
 print("\n",kraj)
-'''
+
 #Zadanie 4
 data = {
     "ID": [1, 2, 3, 4, 5],
@@ -48,9 +48,11 @@ print(większą_pensja,"\n")
 # b) 
 sorted_by_age = df.sort_values(by="Wiek")
 print(sorted_by_age,"\n")
+
 # c)
 avg_salary_by_position = df.groupby("Stanowisko")["Pensja"].mean().reset_index()
 print(avg_salary_by_position,"\n")
+
 # d) 
 promotion_data = {
     "ID": [2, 4],
@@ -59,9 +61,11 @@ promotion_data = {
 promotions = pd.DataFrame(promotion_data)
 merged_data = df.merge(promotions, on="ID", how="left")
 print(merged_data,"\n")
-# e)
-#csv_file_path = "/mnt/data/employees_data.csv"
-#merged_data.to_csv(csv_file_path, index=False)
 
-# f) 
-##csv_file_path, loaded_data.head()
+'''
+csv_file_path = ".csv"
+merged_data.to_csv(csv_file_path, index=False)
+
+f) 
+csv_file_path, loaded_data.head()
+'''
